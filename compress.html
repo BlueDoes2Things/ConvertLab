@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Image Compressor - Compress Images Online | ConvertLab</title>
+    <meta name="description" content="Compress images online to reduce file size while maintaining quality. Perfect for web optimization, email attachments, and storage savings.">
+    <meta name="keywords" content="image compressor, compress images, reduce file size, optimize images, image optimization">
+    <link rel="canonical" href="https://convertlab.example.com/compress.html">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">                <div class="nav-logo">
+                    <h1><a href="index.html">ConvertLab</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="batch-convert.html">Batch Convert</a></li>
+                    <li><a href="resize.html">Resize</a></li>
+                    <li><a href="compress.html" class="active">Compress</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Ad Space 1 -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <iframe data-aa='2399381' src='//ad.a-ads.com/2399381?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Image Compressor</h1>
+                <p>Reduce image file sizes without losing quality. Perfect for web optimization, faster loading times, and saving storage space.</p>
+            </div>
+        </section>
+
+        <section class="converter-section">
+            <div class="converter-container">
+                <div class="upload-area" id="compressUploadArea">
+                    <div class="upload-icon">🗜️</div>
+                    <h3>Upload Image to Compress</h3>
+                    <p>Supports JPG, PNG, WebP formats</p>
+                    <input type="file" id="compressFileInput" accept="image/jpeg,image/png,image/webp">
+                </div>
+
+                <div class="compress-options" id="compressOptions" style="display: none;">
+                    <div class="image-preview-container">
+                        <div class="image-preview">
+                            <img id="compressPreviewImage" alt="Preview">
+                            <div class="image-info">
+                                <span id="originalInfo"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="compress-controls">
+                        <h3>Compression Settings</h3>
+                        
+                        <div class="quality-control">
+                            <label for="qualitySlider">Quality Level:</label>
+                            <div class="slider-container">
+                                <input type="range" id="qualitySlider" min="10" max="100" value="80">
+                                <span id="qualityValue">80%</span>
+                            </div>
+                            <div class="quality-labels">
+                                <span>Small Size</span>
+                                <span>Best Quality</span>
+                            </div>
+                        </div>
+
+                        <div class="compression-presets">
+                            <h4>Quick Presets:</h4>
+                            <div class="preset-buttons">
+                                <button class="preset-btn" data-quality="60">High Compression</button>
+                                <button class="preset-btn active" data-quality="80">Balanced</button>
+                                <button class="preset-btn" data-quality="95">High Quality</button>
+                            </div>
+                        </div>
+
+                        <div class="estimated-size">
+                            <p>Estimated compressed size: <span id="estimatedSize">Calculating...</span></p>
+                            <p>Size reduction: <span id="sizeReduction">-</span></p>
+                        </div>
+
+                        <button class="convert-btn" id="compressBtn">Compress Image</button>
+                    </div>
+                </div>
+
+                <div class="download-area" id="compressDownloadArea" style="display: none;">
+                    <h3>✅ Image Compressed Successfully!</h3>
+                    <div class="comparison">
+                        <div class="before-after">
+                            <div class="comparison-item">
+                                <h4>Original</h4>
+                                <span id="originalSize">-</span>
+                            </div>
+                            <div class="comparison-item">
+                                <h4>Compressed</h4>
+                                <span id="compressedSize">-</span>
+                            </div>
+                            <div class="comparison-item savings">
+                                <h4>You Saved</h4>
+                                <span id="savedSize">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="download-btn" id="compressDownloadBtn">Download Compressed Image</button>
+                    <button class="new-conversion-btn" onclick="resetCompressor()">Compress Another Image</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Space 2 -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <iframe data-aa='2399381' src='//ad.a-ads.com/2399381?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
+        </div>
+
+        <section class="compression-guide">
+            <div class="features-container">
+                <h2>Compression Quality Guide</h2>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <div class="quality-indicator high-compression"></div>
+                        <h3>High Compression (40-60%)</h3>
+                        <p><strong>Best for:</strong> Web thumbnails, email attachments</p>
+                        <p><strong>File size:</strong> Very small</p>
+                        <p><strong>Quality:</strong> Noticeable compression artifacts</p>
+                    </div>
+                    <div class="guide-card recommended">
+                        <div class="quality-indicator balanced"></div>
+                        <h3>Balanced (70-85%) ⭐</h3>
+                        <p><strong>Best for:</strong> Web images, social media</p>
+                        <p><strong>File size:</strong> Good balance</p>
+                        <p><strong>Quality:</strong> High quality with smaller size</p>
+                    </div>
+                    <div class="guide-card">
+                        <div class="quality-indicator high-quality"></div>
+                        <h3>High Quality (90-100%)</h3>
+                        <p><strong>Best for:</strong> Professional photos, printing</p>
+                        <p><strong>File size:</strong> Large</p>
+                        <p><strong>Quality:</strong> Excellent, minimal compression</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="compression-benefits">
+            <div class="features-container">
+                <h2>Why Compress Images?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚀</div>
+                        <h3>Faster Loading</h3>
+                        <p>Smaller images load faster on websites and apps, improving user experience.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💾</div>
+                        <h3>Save Storage</h3>
+                        <p>Reduce storage space on your device, cloud storage, and servers.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📧</div>
+                        <h3>Email Friendly</h3>
+                        <p>Compressed images are easier to share via email and messaging apps.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>Smaller files consume less mobile data and load faster on mobile networks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Space 3 -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <iframe data-aa='2399381' src='//ad.a-ads.com/2399381?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ConvertLab</h3>
+                <p>The ultimate tool for all your image conversion needs.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">Single Convert</a></li>
+                    <li><a href="batch-convert.html">Batch Convert</a></li>
+                    <li><a href="resize.html">Image Resize</a></li>
+                    <li><a href="compress.html">Image Compress</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>        <div class="footer-bottom">
+            <p>&copy; 2025 ConvertLab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="compress-script.js"></script>
+</body>
+</html>

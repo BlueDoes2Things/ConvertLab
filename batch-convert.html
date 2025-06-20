@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Batch Image Converter - Convert Multiple Images at Once | ConvertLab</title>
+    <meta name="description" content="Convert multiple images simultaneously with our batch converter. Support for JPG, PNG, WebP, GIF, BMP formats. Save time with bulk image conversion.">
+    <meta name="keywords" content="batch image converter, bulk image conversion, convert multiple images, batch JPG PNG converter">
+    <link rel="canonical" href="https://convertlab.example.com/batch-convert.html">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">                <div class="nav-logo">
+                    <h1><a href="index.html">ConvertLab</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="batch-convert.html" class="active">Batch Convert</a></li>
+                    <li><a href="resize.html">Resize</a></li>
+                    <li><a href="compress.html">Compress</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>        <!-- Ad Space 1 -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <iframe data-aa='2399381' src='//ad.a-ads.com/2399381?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Batch Image Converter</h1>
+                <p>Convert multiple images at once to save time. Upload up to 20 images and convert them all to your desired format simultaneously.</p>
+            </div>
+        </section>
+
+        <section class="converter-section">
+            <div class="converter-container">
+                <div class="batch-upload-area" id="batchUploadArea">
+                    <div class="upload-icon">📁</div>
+                    <h3>Select Multiple Images</h3>
+                    <p>Choose up to 20 images (JPG, PNG, GIF, BMP, WebP, TIFF)</p>
+                    <input type="file" id="batchFileInput" accept="image/*" multiple>
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <span class="progress-text">Uploading... 0%</span>
+                    </div>
+                </div>
+
+                <div class="batch-preview" id="batchPreview" style="display: none;">
+                    <h3>Selected Images (<span id="imageCount">0</span>)</h3>
+                    <div class="image-grid" id="imageGrid"></div>
+                </div>
+
+                <div class="batch-format-selection" id="batchFormatSelection" style="display: none;">
+                    <h3>Select Output Format for All Images</h3>
+                    <div class="format-grid">
+                        <button class="format-btn" data-format="jpeg">JPG</button>
+                        <button class="format-btn" data-format="png">PNG</button>
+                        <button class="format-btn" data-format="webp">WebP</button>
+                        <button class="format-btn" data-format="gif">GIF</button>
+                        <button class="format-btn" data-format="bmp">BMP</button>
+                        <button class="format-btn" data-format="tiff">TIFF</button>
+                    </div>
+                    <button class="batch-convert-btn" id="batchConvertBtn" disabled>Convert All Images</button>
+                </div>
+
+                <div class="batch-conversion-progress" id="conversionProgress" style="display: none;">
+                    <h3>Converting Images...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="conversionProgressFill"></div>
+                    </div>
+                    <span class="progress-text" id="conversionProgressText">0% Complete</span>
+                </div>
+
+                <div class="batch-download-area" id="batchDownloadArea" style="display: none;">
+                    <h3>✅ Batch Conversion Complete!</h3>
+                    <p>All images have been successfully converted.</p>
+                    <button class="download-btn" id="downloadAllBtn">Download All as ZIP</button>
+                    <button class="new-conversion-btn" onclick="resetBatchConverter()">Convert More Images</button>
+                </div>
+            </div>
+        </section>        <!-- Ad Space 2 -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <iframe data-aa='2399381' src='//ad.a-ads.com/2399381?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
+        </div>
+
+        <section class="batch-features">
+            <div class="features-container">
+                <h2>Batch Conversion Benefits</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Time Saving</h3>
+                        <p>Convert up to 20 images simultaneously instead of one by one.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Consistent Quality</h3>
+                        <p>All images are converted with the same settings for consistency.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>ZIP Download</h3>
+                        <p>Download all converted images in a single ZIP file.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Real-time progress updates during batch conversion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Space 3 -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <iframe data-aa='2399381' src='//ad.a-ads.com/2399381?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
+        </div>
+
+        <section class="how-to-use">
+            <div class="features-container">
+                <h2>How to Use Batch Converter</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Select Images</h3>
+                        <p>Choose multiple images from your device (up to 20 files).</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Choose Format</h3>
+                        <p>Select the desired output format for all images.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Convert All</h3>
+                        <p>Click convert and watch the progress as all images are processed.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Download ZIP</h3>
+                        <p>Download all converted images in a convenient ZIP file.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ConvertLab</h3>
+                <p>The ultimate tool for all your image conversion needs.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">Single Convert</a></li>
+                    <li><a href="batch-convert.html">Batch Convert</a></li>
+                    <li><a href="resize.html">Image Resize</a></li>
+                    <li><a href="compress.html">Image Compress</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>        <div class="footer-bottom">
+            <p>&copy; 2025 ConvertLab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="batch-script.js"></script>
+</body>
+</html>
